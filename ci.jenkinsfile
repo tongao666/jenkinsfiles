@@ -15,7 +15,7 @@ def artifactory = new org.devops.artifactory()
 
 
 def runOpts
-//env
+//env  构建变量
 String buildType = "${env.buildType}"
 String buildShell = "${env.buildShell}"
 String deployHosts = "${env.deployHosts}"
