@@ -143,7 +143,7 @@ pipeline{
         success{
             script{
                 println("success")
-                if ("${runOpts}" == "GitlabPush"){
+                if ("${runOpts}" == "GitlabPush"){    // 这样设置也可以手动构建
                     gitlab.ChangeCommitStatus(projectId,commitSha,"success")
                 }
                 toemail.Email("流水线成功",userEmail)
@@ -154,7 +154,7 @@ pipeline{
         failure{
             script{
                 println("failure")
-                if ("${runOpts}" == "GitlabPush"){
+                if ("${runOpts}" == "GitlabPush"){   // 这样设置也可以手动构建
                     gitlab.ChangeCommitStatus(projectId,commitSha,"failed")
                 }
                 toemail.Email("流水线失败了！",userEmail)
@@ -164,7 +164,7 @@ pipeline{
         aborted{
             script{
                 println("aborted")
-                if ("${runOpts}" == "GitlabPush"){
+                if ("${runOpts}" == "GitlabPush"){  // 这样设置也可以手动构建
                     gitlab.ChangeCommitStatus(projectId,commitSha,"canceled")
                 }
                toemail.Email("流水线被取消了！",userEmail)
