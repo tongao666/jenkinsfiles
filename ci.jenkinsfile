@@ -32,8 +32,8 @@ if ("${runOpts}" == "GitlabPush"){
     env.runOpts = "GitlabPush"
 
     
-} else {
-   userEmail = "2560350642@qq.com"
+} else {  
+   userEmail = "2560350642@qq.com"   // 这样设置也可以手动构建
 }
 
 
